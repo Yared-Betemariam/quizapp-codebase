@@ -67,7 +67,7 @@ const Page = () => {
   };
 
   return (
-    <section className="flex gap-10 pb-20 pt-8">
+    <section className="flex flex-col gap-10 pb-20 pt-4 md:pt-8 md:flex-row">
       <div className="flex flex-1 flex-col gap-2">
         <span>Add Questions</span>
         <div className="flex flex-col">
@@ -156,7 +156,7 @@ const Page = () => {
           </Button>
         </div>
       </div>
-      <div className="flex max-w-md flex-col text-sm">
+      <div className="flex max-w-[20rem] flex-col text-sm">
         <span className="text-base text-yellow-600">Note</span>
         <span>
           Make sure the are not blank spaces at the begining and ending of an

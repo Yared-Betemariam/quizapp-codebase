@@ -17,7 +17,7 @@ export const navLinks = [
 const Header = () => {
   return (
     <header className="absolute z-50 top-0 inset-x-0">
-      <section className="wrapper h-[5rem] gap-6 flex justify-between items-center">
+      <section className="wrapper h-[5rem] gap-4 flex justify-between items-center">
         <Logo />
         <nav className="hidden ml-auto lg:flex items-center gap-10 pt-1">
           {navLinks.map((item) => (
@@ -29,11 +29,10 @@ const Header = () => {
         <Button
           variant={"outline"}
           size={"sm"}
-          className="border-primary/50 text-primary brightness-50 bg-transparent hover:bg-gray-100/10"
+          className="border-primary/50 ml-auto text-primary brightness-50 bg-transparent hover:bg-gray-100/10"
         >
           Download
         </Button>
-        <MobileNav />
       </section>
     </header>
   );

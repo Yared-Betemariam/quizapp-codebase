@@ -4,12 +4,11 @@ import { adminAuth } from "@/actions/database";
 import Logo from "@/components/Logo";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
-import { AlertCircle, Loader, Loader2, X } from "lucide-react";
-import { redirect } from "next/navigation";
+import { AlertCircle, Loader2, X } from "lucide-react";
 import React, { useState } from "react";
 
 const AdminLayout = ({ children }: { children: React.ReactNode }) => {
-  const [isAdmin, setIsAdmin] = useState(true);
+  const [isAdmin, setIsAdmin] = useState(false);
 
   return (
     <main className="flex-1 wrapper flex flex-col">
