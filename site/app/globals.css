@@ -55,7 +55,7 @@
   }
 
   body {
-    @apply bg-background text-foreground flex flex-col min-h-screen;
+    @apply bg-zinc-100/75 text-foreground flex flex-col min-h-screen font-medium;
   }
 
   .wrapper {
@@ -68,11 +68,11 @@
 
   /* h and p */
   .h1 {
-    @apply text-4xl xs:text-5xl lg:text-[5rem] tracking-[-0.035em] font-extrabold capitalize;
+    @apply text-[3.5rem] leading-[1] lg:text-[5rem] tracking-[-0.035em] font-extrabold capitalize;
   }
 
   .h2 {
-    @apply text-4xl md:text-5xl lg:text-[4rem] md:leading-[1.1] tracking-[-0.035em] font-black capitalize;
+    @apply text-5xl lg:text-[4rem] md:leading-[1.1] tracking-[-0.035em] font-black capitalize;
   }
 
   .h3 {
@@ -85,6 +85,9 @@
 
   .body {
     @apply text-base;
+  }
+  .highlight {
+    @apply text-primary brightness-[.6] underline underline-offset-8 decoration-primary/25;
   }
 
   body .simpleborder {
@@ -119,10 +122,19 @@
 
   /* text */
   .clipped-text {
-    @apply bg-clip-text text-transparent bg-gradient-to-br from-foreground to-gray-500;
+    /* @apply bg-clip-text text-transparent bg-gradient-to-br from-foreground to-gray-500;*/
+    @apply text-gray-700;
   }
 
   .glow {
     @apply drop-shadow-xl;
+  }
+
+  .glow-green {
+    filter: drop-shadow(0 0px 23px rgba(53, 239, 130, 0.833));
+  }
+
+  .glow-red {
+    filter: drop-shadow(0 0px 23px rgba(239, 53, 53, 0.833));
   }
 }

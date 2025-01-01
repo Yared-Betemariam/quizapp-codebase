@@ -26,9 +26,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={font.className}>
-      <div className="pattern fixed inset-0 opacity-[0.02]" />
-      {children}</body>
+      <body className={font.className}>{children}</body>
     </html>
   );
 }

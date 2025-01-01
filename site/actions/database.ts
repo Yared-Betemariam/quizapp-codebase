@@ -46,22 +46,16 @@ export const addQuestionToDB = async ({
 };
 
 // Questions
-export const getQuestions = async (pageNumber: number, info_data?: string) => {
+export const getQuestions = async (info_data?: string) => {
   try {
     await connectDB();
-    const limit = 6;
-    const skip = (pageNumber - 1) * limit;
     const query: any = {};
 
     if (info_data) {
       query.info = { $in: info_data };
     }
 
-    const QuestionsList = await Questions.find(query)
-      .skip(skip)
-      .limit(limit)
-      .lean<Question[]>()
-      .exec();
+    const QuestionsList = await Questions.find(query).lean<Question[]>().exec();
 
     return {
       success: "Fetching done!",
@@ -80,6 +74,17 @@ export const getQuestion = async (QuestionId: string) => {
       .lean<Question>()
       .exec();
     return { success: "Fetching done!", data: Question };
+  } catch (error) {
+    console.log(error);
+    return { error: "Something went wrong" };
+  }
+};
+
+export const deleteQuestion = async (QuestionId: string) => {
+  try {
+    await connectDB();
+    await Questions.findByIdAndDelete(QuestionId).exec();
+    return { success: "deleting done!" };
   } catch (error) {
     console.log(error);
     return { error: "Something went wrong" };
